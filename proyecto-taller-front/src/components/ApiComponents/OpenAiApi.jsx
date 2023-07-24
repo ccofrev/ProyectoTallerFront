@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const apiKey = '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'; // Reemplaza con tu propia API key de OpenAI
-const endpoint = 'https://api.openai.com/v1/engines/davinci/completions';
+const apiKey = import.meta.env.VITE_OPENAI_KEY
+const endpoint = import.meta.env.VITE_OPENAI_URL
 const hashtag = "#vamosLaU"
 const prompt_ = `entiendes este hashtag chileno ${hashtag}: dame 3 conceptos para buscar noticias en bing, sin incluir el mismo hashtag`
 

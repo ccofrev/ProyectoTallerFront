@@ -4,9 +4,10 @@ import axios from 'axios';
 function TrendingApi() {
 
   const [data, setData] = useState(null);
+  const URL = import.meta.env.VITE_TREND_URL
 
   useEffect(() => {
-    axios.get('http://64.176.195.184/top')
+    axios.get(URL)
       .then(response => {
         setData(response.data);
       })

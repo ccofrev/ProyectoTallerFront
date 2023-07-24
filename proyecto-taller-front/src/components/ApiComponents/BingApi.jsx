@@ -4,7 +4,7 @@ import axios from 'axios';
 function BingApi() {
   const [data, setData] = useState(null);
 
-  const apiKey = 'a5dcfb4a98cc46a099363d57918c55f4'; // Reemplaza con tu propia API key de Bing
+  const apiKey = import.meta.env.VITE_BING_KEY; // Reemplaza con tu propia API key de Bing
   const query = 'Giorgio Jackson'; // Palabra clave para buscar noticias, puedes cambiarla según lo que desees buscar
   
 
@@ -24,7 +24,7 @@ function BingApi() {
       freshness: 'Day'  // Noticias recientes del día
     }
 
-    const url = "https://api.bing.microsoft.com/v7.0/news/search?q=" + data.q + '&count=' + data.count + '&mkt=' + data.mkt + '&freshness=' + data.freshness;
+    const url = import.meta.env.VITE_BING_URL + "search?q=" + data.q + '&count=' + data.count + '&mkt=' + data.mkt + '&freshness=' + data.freshness;
    
     axios.get(url, config)
       .then(response => {
