@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const apiKey = import.meta.env.VITE_OPENAI_KEY
 const endpoint = import.meta.env.VITE_OPENAI_URL
+
 const hashtag = "#vamosLaU"
 const prompt_ = `entiendes este hashtag chileno ${hashtag}: dame 3 conceptos para buscar noticias en bing, sin incluir el mismo hashtag`
 
