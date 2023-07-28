@@ -47,7 +47,7 @@ function TestComponent() {
                     <p key={index}>
                         <strong>{resultado['name']}:</strong> {resultado['description']} 
                     </p>
-                )): <img src='/assets/img/loading.gif' alt="Loading..."/>
+                )): <img src='../assets/img/loading.gif' alt="Loading..."/>
             }
         </div>
     );
