@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function BingApi() {
-  const [data, setData] = useState(null);
-
-  const apiKey = import.meta.env.VITE_BING_KEY; // Reemplaza con tu propia API key de Bing
-  // const query = 'Giorgio Jackson'; 
-  const query = busqueda; 
+const BingTrends = ({ inputTrends }) => {
+  const [bingTrendsData, setBingTrendsData] = useState([]);
 
   useEffect(() => {
     axios.defaults.headers.get['Ocp-Apim-Subscription-Key'] = apiKey;
@@ -32,22 +28,9 @@ function BingApi() {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [inputTrends]);
 
-  return (
-    <div>
-      {data ? (
-        <ul>
-          {data.value.map((item,index) => (
-            <li key={index}>{item.name}</li>
-          ))}
-        </ul>
-      ) : (
-        <p>Cargando datos...</p>
-      )}
-    </div>
-  );
-}
+  return null;
+};
 
-export default BingApi;
-
+export default BingTrends;
